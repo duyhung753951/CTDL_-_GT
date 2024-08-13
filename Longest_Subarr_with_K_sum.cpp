@@ -10,7 +10,7 @@ int lenOfLongestSubarr(vector<int>& a, int n, int K){
     for(int i = 0; i < n; i++){
         sum+=a[i];
         if(sum == K){
-            maxLen+=1;
+            maxLen = i + 1;
         }
         else if(sum_index_map.find(sum - K) != sum_index_map.end()){ // nếu (sum - K) có tồn tại trong map
             maxLen = max(maxLen, i - sum_index_map[sum - K]);
